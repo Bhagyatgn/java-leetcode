@@ -1,4 +1,4 @@
-//450=Delete a Node from Binary Search Tree
+//450=Delete a Node from BST
 public class DeleteTreeNode(TreeNode root,int key) {
     if (root==null){
         return  null;
