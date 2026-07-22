@@ -15,14 +15,20 @@ public class DeleteTreeNode(TreeNode root,int key) {
         if (root.left==null){
             return root.right;
         }
-        else if (root.right==null){
+        if (root.right==null){
             return root.left;
         }
-        else{
-            TreeNode minNode=findMin(root.right);
-            root.val=minNode.val;
-            root.right=DeleteTreeeNode(root.right,minNode.val);
+        
+        TreeNode minNode=findMin(root.right);
+        root.val=minNode.val;
+        root.right=DeleteTreeeNode(root.right,minNode.val);
         }
+        return root;
     }
-
+    private TreeNode findMin(TreeNode node) {
+        while (node.left != null) {
+            node = node.left;
+        }
+        return node;
+    }
 }
